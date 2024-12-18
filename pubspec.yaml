@@ -48,6 +48,7 @@ dependencies:
   modal_progress_hud_nsn: ^0.5.1
   supabase_flutter: ^2.8.1
   storage_client: ^2.2.0
+  crypto: ^3.0.6
 
 dev_dependencies:
   flutter_test:

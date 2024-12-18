@@ -16,7 +16,7 @@ final getIt = GetIt.instance;
 
 
 void setupGetit() {
-  getIt.registerSingleton<StorageService>(FirestoreService());
+  // getIt.registerSingleton<StorageService>(FirestoreService());
   getIt.registerSingleton<DataBaseService>(FireStoreDataBase());
 
   getIt.registerSingleton<ImagesRepo>(

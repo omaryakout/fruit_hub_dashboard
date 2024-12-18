@@ -236,7 +236,7 @@ class _ProductPageState extends State<ProductPage> {
 
                                     context
                                         .read<AddProductCubit>()
-                                        .addProduct(input);
+                                        .addProduct(input,context);
                                   } else {
                                     _autovalidateMode = AutovalidateMode.always;
                                     setState(() {});
