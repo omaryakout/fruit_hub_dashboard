@@ -3,5 +3,5 @@ class Backendpoints {
   static const users = 'users';
   static const storageFile = 'images';
     static const storageFileSupabase = 'fruits';
-
+ static const orders = 'orders';
 }

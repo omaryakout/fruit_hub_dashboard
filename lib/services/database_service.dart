@@ -11,8 +11,8 @@ Future<void> addData(
        String? documentId});
 
  
-  Future<dynamic> getData(
-      {required String path, String? documentId});
+  // Future<List<Map<String,dynamic>>> getData(
+  //     {required String path, String? documentId});
       
   Future<bool> isUserSigned({required String path, required String documentId});
 }
