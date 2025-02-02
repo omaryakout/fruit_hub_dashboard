@@ -31,7 +31,7 @@ class OrderModel {
         paymentMethod: json['paymentMethod'].payWithCash! ? 'cash' : 'online');
   }
 
-  toEntity() {
+  OrderEntity toEntity() {
     return OrderEntity(
         totalPrice: totalPrice,
         orderProducts: orderProducts.map((e) => e.toEntity()).toList(),

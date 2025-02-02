@@ -4,16 +4,29 @@ import 'package:fruit_hub_dashboard/errors/failures.dart';
 import 'package:fruit_hub_dashboard/services/backendpoints.dart';
 import 'package:fruit_hub_dashboard/services/database_service.dart';
 
-// class OrdersRepoImpl implements OrdersRepo {
-//   OrdersRepoImpl({required this.dataBaseService});
-//   DataBaseService dataBaseService;
-//   @override
-//   Future<Either<Failures, Map<String,dynamic>>> fetchOrders() async {
-//     try {
-//       // var orders =await dataBaseService.getData(path: Backendpoints.orders);
-//       // return right(orders);
-//     } catch (e) {
-//       return left(ServerFailure(e.toString()));
-//     }
-//   }
-// }
+import '../../../features/main_page/orders/data/models/order_model.dart';
+import '../../../features/main_page/orders/domain/entities/models/order_entity.dart';
+
+class OrdersRepoImpl implements OrdersRepo {
+  OrdersRepoImpl({required this.dataBaseService});
+  DataBaseService dataBaseService;
+  @override
+  Future<Either<Failures, List<OrderEntity>>> fetchOrders() async {
+    try {
+      var data = await dataBaseService.getData(path: Backendpoints.orders)
+          as List<Map<String, dynamic>>;
+      print(data.length);
+      print(data);
+      List<OrderEntity> products = data
+          .map(
+            (e) => OrderModel.fromJson(e).toEntity(),
+          )
+          .toList();
+      print(products.elementAt(1));
+
+      return right(products);
+    } catch (e) {
+      return left(ServerFailure('failed to load products'));
+    }
+  }
+}
