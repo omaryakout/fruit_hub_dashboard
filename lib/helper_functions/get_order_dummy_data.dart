@@ -6,7 +6,7 @@ OrderEntity getDummyOrder() {
   // Create a sample shipping address
   ShippingAddressEntity shippingAddress = ShippingAddressEntity(
     name: 'John Doe',
-    phoneNumber: '123-456-7890',
+    phoneNumber: '888',
     address: '123 Main St',
     address2: '5th Floor',
     city: 'New York',
@@ -43,7 +43,7 @@ OrderEntity getDummyOrder() {
     0,
     (sum, product) => sum + (product.price * product.quantity),
   );
-return OrderEntity(
+  return OrderEntity(
     totalPrice: totalPrice,
     uid: 'user123',
     shippingAddressModel: shippingAddress,
@@ -51,5 +51,4 @@ return OrderEntity(
     paymentMethod: 'Cash',
   );
   // Create and return the OrderModel
-  
 }

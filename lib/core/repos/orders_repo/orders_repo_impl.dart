@@ -18,8 +18,8 @@ class OrdersRepoImpl implements OrdersRepo {
       print(data.length);
       print(data);
       List<OrderEntity> products = data
-          .map(
-            (e) => OrderModel.fromJson(e).toEntity(),
+          .map<OrderEntity>(
+            (e) => OrderModel.fromJson(e as Map<String, dynamic>).toEntity(),
           )
           .toList();
       print(products.elementAt(1));

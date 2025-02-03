@@ -1,6 +1,5 @@
 class ShippingAddressEntity {
-
- String? name;
+  String? name;
   String? email;
   String? address;
   String? city;
@@ -15,5 +14,4 @@ class ShippingAddressEntity {
     this.address2,
     this.phoneNumber,
   });
-
 }
